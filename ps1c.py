@@ -2,7 +2,6 @@
 
 #ask user for salary, and fill in the blanks
 annual_salary = float(input("Enter the starting salary: "))
-#portion_saved is variable you are looking for
 total_cost = 1000000
 semi_annual_raise = 0.07
 
@@ -33,10 +32,10 @@ while abs(current_savings - cost_downpayment) >= epsilon:
     #reset
     current_savings = 0
 
-    for i in range(0, months):
+    for i in range(1, months + 1):
         monthly_deposit = monthly_salary * (guess / 10000)
 
-        if i % 6 == 5:
+        if i % 6 == 0:
             annual_salary = annual_salary * (1 + semi_annual_raise)
             monthly_salary = annual_salary / 12.0
             monthly_deposit = monthly_salary * (guess / 10000)
