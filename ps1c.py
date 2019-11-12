@@ -44,8 +44,6 @@ while abs(current_savings - cost_downpayment) >= epsilon:
         returnOnInvestment = monthly_r * current_savings
         current_savings += returnOnInvestment
         current_savings += monthly_deposit
-    
-    print("current savings $", current_savings, " vs cost downpayment $", cost_downpayment)
 
     if current_savings > cost_downpayment:
         #look in upper half
@@ -55,3 +53,6 @@ while abs(current_savings - cost_downpayment) >= epsilon:
         high = guess
     guess = (low + high)/2.0
     num_guesses += 1 #counts guesses
+
+print("best savings rate:", guess)
+print("Stepts in bisection search: ", num_guesses)
