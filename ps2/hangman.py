@@ -1,7 +1,7 @@
 # Problem Set 2, hangman.py
 # Name: Srikar
 # Collaborators:
-# Time spent:
+# Time spent: 
 
 # Hangman Game
 # -----------------------------------
@@ -40,6 +40,7 @@ def choose_word(wordlist):
     
     Returns a word from wordlist at random
     """
+  
     return random.choice(wordlist)
 
 # end of helper code
@@ -60,8 +61,17 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    sec_word_length = len(secret_word)
+    guessed = 0
+
+    for char in secret_word:
+      if char in letters_guessed:
+        guessed += 1
+
+    if guessed != sec_word_length:
+      return False
+    else:
+      return True
 
 
 
